@@ -8,7 +8,8 @@ SoccerToMe::Application.routes.draw do
   resources :manufacturers
 
   resources :products
-
+  
+  match 'products' => 'products#index', :via => :get, :as => 'products'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
