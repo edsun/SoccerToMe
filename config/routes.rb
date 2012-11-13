@@ -1,4 +1,8 @@
 SoccerToMe::Application.routes.draw do
+  resources :categories
+
+  resources :manufacturers
+
   resources :products
 
   # The priority is based upon order of creation:
