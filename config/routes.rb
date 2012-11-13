@@ -1,4 +1,8 @@
 SoccerToMe::Application.routes.draw do
+  resources :images
+
+  resources :reviews
+
   resources :categories
 
   resources :manufacturers
