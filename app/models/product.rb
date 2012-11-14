@@ -8,5 +8,5 @@ class Product < ActiveRecord::Base
   has_many :images
   
   # Validation
-  validates_presence_of :name, :stock_quantity, :price, :category_id, :manufacturer_id
+  validates_presence_of :Name, :Stock_quantity, :Price, :category_id, :manufacturer_id
 end
