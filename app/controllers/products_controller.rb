@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
-  
+  # Remove repeating code to get the ID from only these actions
   before_filter :load_product_by_id, :only => [:show, :edit, :update, :destroy]
   
   # Require authentication except on the index and show
