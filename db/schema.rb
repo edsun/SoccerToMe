@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(:version => 20121114142821) do
     t.decimal  "Price"
     t.text     "Description"
     t.string   "image_url"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "category_id"
-    t.integer  "manfacturer_id"
+    t.integer  "manufacturer_id"
   end
 
   create_table "reviews", :force => true do |t|
