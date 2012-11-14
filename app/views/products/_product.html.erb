@@ -1,5 +1,6 @@
 <table>
   <tr>
+    <th>Manufacturer</th>
     <th>Name</th>
     <th>Stock quantity</th>
     <th>Price</th>
@@ -10,9 +11,14 @@
     <th></th>
     <th></th>
   </tr>
-
-<% @products.each do |product| %>
   <tr>
+    <td>
+      <% if product.manufacturer.present? %>
+        <%= product.manufacturer.Name %>
+      <% else %>
+        Manufacturer name not found.
+      <% end %>
+    </td>
     <td><%= product.Name %></td>
     <td><%= product.Stock_quantity %></td>
     <td><%= product.Price %></td>
@@ -27,5 +33,4 @@
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
-<% end %>
 </table>
