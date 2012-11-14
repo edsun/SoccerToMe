@@ -2,10 +2,13 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   
+  before_filter :load_product_by_id, :only => [:show, :edit, :update, :destroy]
+  
+  # Require authentication except on the index and show
   before_filter :require_sudo, :except => [:index, :show]
   
   def index
-    @products = Product.all 
+    @products = Product.includes(:reviews).order('created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,16 +19,12 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @product = Product.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @product }
-    end
+    @review = @product.reviews.build
   end
 
   # GET /products/new
   # GET /products/new.json
+  # Show an empty form to create a new product
   def new
     @product = Product.new
 
@@ -37,7 +36,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-    @product = Product.find(params[:id])
+    #@product = Product.find(params[:id])
   end
 
   # POST /products
@@ -47,11 +46,9 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render json: @product, status: :created, location: @product }
+        redirect_to :action => :show, :id => @product
       else
-        format.html { render action: "new" }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+        render :action => :new
       end
     end
   end
@@ -59,7 +56,7 @@ class ProductsController < ApplicationController
   # PUT /products/1
   # PUT /products/1.json
   def update
-    @product = Product.find(params[:id])
+    #@product = Product.find(params[:id])
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
@@ -75,12 +72,17 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
-    @product = Product.find(params[:id])
     @product.destroy
 
     respond_to do |format|
       format.html { redirect_to products_url }
       format.json { head :no_content }
     end
+  end
+  
+  protected
+  
+  def load_product_by_id
+    @product = Product.includes(:reviews).find(params[:id])
   end
 end

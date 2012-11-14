@@ -1,8 +1,13 @@
 class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.json
+  
+  #Require authentication
+  before_filter :require_sudo
+  
   def index
-    @reviews = Review.all
+    # Grab all the reviews for this product
+    @reviews = Review.includes(:product).all
 
     respond_to do |format|
       format.html # index.html.erb

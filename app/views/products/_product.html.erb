@@ -1,0 +1,31 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Stock quantity</th>
+    <th>Price</th>
+    <th>Description</th>
+    <th>Image url</th>
+    <th>Reviews</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.Name %></td>
+    <td><%= product.Stock_quantity %></td>
+    <td><%= product.Price %></td>
+    <td><%= product.Description %></td>
+    <td>
+      <% if product.image_url.present? %>
+        <%= image_tag product.image_url, :width => '200', :height => '300' %>
+      <% end %>
+    </td>
+    <td>This product has <%= pluralize product.reviews.count, 'review' %>.</td>
+    <td><%= link_to 'Show', product %></td>
+    <td><%= link_to 'Edit', edit_product_path(product) %></td>
+    <td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
