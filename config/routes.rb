@@ -1,4 +1,9 @@
 SoccerToMe::Application.routes.draw do
+  #get "store/index"
+  root :to => 'Store#index'
+
+  #get "store/show"
+
   resources :images
 
   resources :reviews
