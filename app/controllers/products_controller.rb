@@ -45,12 +45,10 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(params[:product])
 
-    respond_to do |format|
-      if @product.save
-        redirect_to :action => :show, :id => @product.id
-      else
-        render :action => :new
-      end
+    if @product.save
+      redirect_to :action => :show, :id => @product.id
+    else
+      render :action => :new
     end
   end
 
