@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<h1>SoccerToMe</h1>
+<nav>
+  <ul>
+    <li><%= link_to 'Home', root_path %></li>
+    <li><%= link_to 'Products', products_path %></li>
+  </ul>
+</nav>
+<div id="content">
+  <%= yield %>
+</div>
 </body>
 </html>
