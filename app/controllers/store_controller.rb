@@ -1,6 +1,6 @@
 class StoreController < ApplicationController
   def index
-    @products = Product.includes(:reviews).order('created_at DESC')
+    @products = Product.includes(:reviews).order('created_at DESC').limit(5)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,2 +1,13 @@
-<%= render :partial => 'product', :collection => @products, :as => 'product' %>
+<h3>
+  Recent Items
+</h3>
+  <% @products.each do |product| %>
+    <%= link_to(image_tag(product.image_url, :width => '200px'), product) %>
+  <% end %>
+
+
+<h3>
+  On Sale Items
+</h3>
+<p>On Sale Items go here</p>
 
