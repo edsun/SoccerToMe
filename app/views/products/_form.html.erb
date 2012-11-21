@@ -33,11 +33,11 @@
   </div>
   <div class="field">
     <%= f.label :manufacturer_id %><br />
-    <%= f.text_field :manufacturer_id %>
+    <%= f.collection_select(:manufacturer_id, Manufacturer.all, :id, :Name) %>
   </div>
   <div class="field">
     <%= f.label :category_id %><br />
-    <%= f.text_field :category_id %>
+    <%= f.collection_select(:category_id, Category.all, :id, :Name) %>
   </div>
   <div class="actions">
     <%= f.submit %>
