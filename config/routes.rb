@@ -1,6 +1,10 @@
 SoccerToMe::Application.routes.draw do
   #get "store/index"
-  root :to => 'Store#index'
+  root :to => 'store#index'
+  
+  match "store/:id" => "store#show", :as => "store", :via => :get
+  
+  match "results" => "store#search_results", :as => 'results', :via => :post
 
   #get "store/show"
 

@@ -1,14 +1,14 @@
-<% if product.manufacturer.present? %>
-    <p><span class="column">Manufacturer: </span><%= product.manufacturer.Name %></p>
-<% else %>
-    Manufacturer name not found.
-<% end %>
 <h1><%= product.Name %></h1>
-<% if product.image_url.present? %>
-    <%= image_tag product.image_url %>
-<% end %>
-<p><span class="column">Stock Quantity: </span><%= product.Stock_quantity %></p>
-<h2>Description</h2>
-<p><%= product.Description %></p>
-<p>This product has <%= pluralize product.reviews.count, 'review' %>.</p>
-<%= link_to 'Show', product %>
+<div class="image">
+    <% if product.image_url.present? %>
+        <%= image_tag product.image_url, :width => '400px' %>
+    <% end %>
+</div>
+<div class="info">
+    <h3><span class="column">Price: </span>$<%= product.Price %></h3>
+    <h2>Description</h2>
+    <p><%= product.Description %></p>
+</div>
+<div class="reviews">
+    <p>This product has <%= pluralize product.reviews.count, 'review' %>.</p>
+</div>

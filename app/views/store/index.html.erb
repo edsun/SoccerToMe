@@ -1,13 +1,17 @@
-<h3>
+<div id="Recent">
+  <h3>
   Recent Items
-</h3>
+  </h3>
   <% @products.each do |product| %>
-    <%= link_to(image_tag(product.image_url, :width => '200px'), product) %>
+    <%= link_to(image_tag(product.image_url, :height => '250px'), store_path(product.id)) %>
   <% end %>
+</div>
 
+<div id="Sale">
+  <h3>
+    On Sale Items
+  </h3>
+  <p>On Sale Items go here</p>
+</div>
 
-<h3>
-  On Sale Items
-</h3>
-<p>On Sale Items go here</p>
 

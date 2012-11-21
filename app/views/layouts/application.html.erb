@@ -7,20 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="container">
   <header>
     <h1>SoccerToMe</h1>
   </header>
-<nav>
-  <ul>
-    <li><%= link_to 'Home', root_path %></li>
-    <li><%= link_to 'All Products', products_path %></li>
-    <li><a href="#">Boots</a></li>
-    <li><a href="#">Kits</a></li>
-    <li><a href="#">Search</a></li>
-  </ul>
-</nav>
-<div id="content">
-  <%= yield %>
+  <nav>
+    <ul>
+      <li><%= link_to 'Home', root_path %></li>
+      <li><%= link_to 'All Products', products_path %></li>
+      <li><a href="#">Boots</a></li>
+      <li><a href="#">Kits</a></li>
+      <%= form_tag results_path do %>
+        <%= label_tag "Search" %>
+        <%= text_field_tag :keyword %>
+        <%= submit_tag "Search" %>
+      <% end %>
+    </ul>
+  </nav>
+  <div id="content">
+    <%= yield %>
+  </div>
 </div>
 </body>
 </html>

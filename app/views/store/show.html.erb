@@ -8,22 +8,24 @@
     <%=  render @product.reviews %>
 <% end %>
 
-<%=  form_for @review do |f| %>
-    <div>
-      <%=  f.label :Title %>
-      <%=  f.text_field :Title %>
-    </div>
-    <div>
-      <%=  f.label :Body %>
-      <%=  f.text_area :Body %>
-    </div>
-    <div>
-      <%=  f.label :Rating %>
-      <%=  f.text_field :Rating %>
-    </div>
-    <div>
-      <%= f.hidden_field :Product_ID %>
-      <%= f.submit %>
-    </div>
-<% end %>
-<%= link_to 'Back to all products', products_path %>
+<div class="reviews">
+    <%=  form_for @review do |f| %>
+        <div>
+          <%=  f.label :Title %>
+          <%=  f.text_field :Title %>
+        </div>
+        <div>
+          <%=  f.label :Body %>
+          <%=  f.text_area :Body %>
+        </div>
+        <div>
+          <%=  f.label :Rating %>
+          <%=  f.text_field :Rating %>
+        </div>
+        <div>
+          <%= f.hidden_field :Product_ID %>
+          <%= f.submit %>
+        </div>
+    <% end %>
+</div>
+<%= link_to 'Back to all products', root_path %>

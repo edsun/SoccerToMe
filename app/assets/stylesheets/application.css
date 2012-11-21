@@ -11,10 +11,30 @@
  *= require_self
  *= require_tree .
 */
+header > h1{
+    text-align: center;
+    margin: 0px auto;
+}
+
+img{
+    border: 2px solid black;
+}
+
+#container{
+    width: 1000px;
+    margin: 0px auto;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 5px 5px #888;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    box-shadow: 5px 5px 5px #888;
+    background-color:  #EEE;
+}
 
 nav {
-    border: 2px solid black;
-    float: right;
+    border-bottom: 2px solid black;
+    text-align: center;
 }
 
 nav > ul{
@@ -23,6 +43,28 @@ nav > ul{
     padding: 0px;
 }
 
+nav li{
+    margin: 2px;
+    display: inline;
+}
+
 #content{
-    width: 1000px;
+}
+
+#Recent, #Sale{
+    width: 100%;
+}
+
+.info{
+    float: right;
+    width: 50%;
+}
+
+.image{
+    float: left;
+}
+
+.reviews{
+    clear: both;
+    margin: 0px auto;
 }
