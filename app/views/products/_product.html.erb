@@ -8,6 +8,8 @@ Manufacturer name not found.
   <%= image_tag product.image_url, :class => 'main_image' %>
 <% end %>
 <p><span class="column">Stock Quantity: </span><%= product.Stock_quantity %></p>
+<p><span class="column">Price: </span>$<%= product.Price %></p>
+<p><span class="column">Sale Price: </span>$<%= product.sale_price %></p>
 <h2>Description</h2>
 <p class="description"><%= product.Description %></p>
 <p>This product has <%= pluralize product.reviews.count, 'review' %>.</p>

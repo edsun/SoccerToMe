@@ -17,7 +17,7 @@
     <td><%= province.name %></td>
     <td><%= province.gst_rate %></td>
     <td><%= province.hst_rate %></td>
-    <td><%= province.pst_rate %></td>
+    <td><%= province.pst_rate.round(2) %></td>
     <td><%= link_to 'Show', province %></td>
     <td><%= link_to 'Edit', edit_province_path(province) %></td>
     <td><%= link_to 'Destroy', province, confirm: 'Are you sure?', method: :delete %></td>

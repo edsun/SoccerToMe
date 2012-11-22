@@ -23,6 +23,10 @@
     <%= f.label :Rating %><br />
     <%= f.text_field :Rating %>
   </div>
+  <div class="field">
+    <%= f.label :Product_ID %><br />
+    <%= f.collection_select(:Product_ID, Product.all, :id, :Name) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

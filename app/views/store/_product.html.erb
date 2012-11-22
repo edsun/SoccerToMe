@@ -5,7 +5,12 @@
     <% end %>
 </div>
 <div class="info">
-    <h3><span class="column">Price: </span>$<%= product.Price %></h3>
+    <% if product.sale_price.present? %>
+        <h3><span class="column">Price: </span><s>$<%= product.Price %></s></h3>
+        <h3><span class="column">Sale Price: </span>$<%= product.sale_price %></h3>
+    <% else %>
+        <h3><span class="column">Price: </span>$<%= product.Price %></h3>
+    <% end %>
     <h2>Description</h2>
     <p><%= product.Description %></p>
     <div class="show">

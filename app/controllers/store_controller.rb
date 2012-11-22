@@ -1,7 +1,7 @@
 class StoreController < ApplicationController
   def index
     @products = Product.includes(:reviews).order('created_at DESC').limit(4)
-    @sale = Product.where(:on_sale => true)
+    @sale = Product.where("sale_price > 0.00")
 
     respond_to do |format|
       format.html # index.html.erb
