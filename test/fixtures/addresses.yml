@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  main_address: false
+  street_no: MyString
+  street_name: MyString
+  city: MyString
+  postal_code: MyString
+  customer_id: 1
+  province_id: MyString
+
+two:
+  main_address: false
+  street_no: MyString
+  street_name: MyString
+  city: MyString
+  postal_code: MyString
+  customer_id: 1
+  province_id: MyString

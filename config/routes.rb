@@ -1,4 +1,6 @@
 SoccerToMe::Application.routes.draw do
+  resources :addresses
+
   resources :customers
 
   resources :orders
