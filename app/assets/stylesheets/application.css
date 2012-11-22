@@ -51,8 +51,9 @@ nav li{
 #content{
 }
 
-#Recent, #Sale{
+#recent, #sale, #brand{
     width: 100%;
+    margin: 5px;
 }
 
 .info{
@@ -67,4 +68,9 @@ nav li{
 .reviews{
     clear: both;
     margin: 0px auto;
+}
+
+footer{
+    margin: 0px auto;
+    text-align: center;
 }

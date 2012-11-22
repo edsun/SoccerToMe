@@ -4,6 +4,8 @@ SoccerToMe::Application.routes.draw do
   
   match "store/boots" => "store#boots", :as => 'boots', :via => :get
   
+  match "store/kits" => "store#kits", :as => 'kits', :via => :get
+  
   match "store/results" => "store#search_results", :as => 'results', :via => :post
   
   match "store/:id" => "store#show", :as => "store", :via => :get

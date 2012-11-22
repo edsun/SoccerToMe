@@ -28,4 +28,8 @@ class StoreController < ApplicationController
     
     @products = Product.where(:category_id => '1')
   end
+  
+  def kits
+    @products = Product.where(:category_id => '2')
+  end
 end
