@@ -1,5 +1,7 @@
 SoccerToMe::Application.routes.draw do
-  get "admin/index"
+  #get "admin/index"
+  
+  match "admin" => 'admin#index', :as => 'admin'
 
   resources :provinces
 

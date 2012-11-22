@@ -1,2 +1,15 @@
-<h1>Admin#index</h1>
-<p>Find me in app/views/admin/index.html.erb</p>
+<h1>Main Admin Dashboard</h1>
+<div class="admin">
+  <p>Please select an action:</p>
+  <ul class="selections">
+    <li><%= link_to(image_tag("Admin/Product.jpg", :height => '200px', :width => '150px', :class => 'select'), products_path) %></li>
+    <li><%= link_to(image_tag("Admin/canada.jpg", :height => '200px', :width => '150px', :class => 'select'), provinces_path) %></li>
+    <li><%= link_to(image_tag("Admin/Customer.jpg", :height => '200px', :width => '150px', :class => 'select'), customers_path) %></li>
+    <li><%= link_to(image_tag("Admin/Orders.png", :height => '200px', :width => '150px', :class => 'select'), orders_path) %></li>
+    <li><%= link_to(image_tag("Admin/Reviews.png", :height => '200px', :width => '150px', :class => 'select'), reviews_path) %></li>
+    <li><%= link_to(image_tag("Admin/Manufacturer.png", :height => '200px', :width => '150px', :class => 'select'), manufacturers_path) %></li>
+    <li><%= link_to(image_tag("Admin/Categories.png", :height => '200px', :width => '150px', :class => 'select'), categories_path) %></li>
+    <li><%= link_to(image_tag("Admin/pictures.png", :height => '200px', :width => '150px', :class => 'select'), images_path) %></li>
+    <li><%= link_to(image_tag("Admin/address.png", :height => '200px', :width => '150px', :class => 'select'), addresses_path) %></li>
+  </ul>
+</div>
