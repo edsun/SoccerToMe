@@ -5,7 +5,7 @@ Manufacturer name not found.
 <% end %>
 <h1><%= product.Name %></h1>
 <% if product.image_url.present? %>
-  <%= image_tag product.image_url %>
+  <%= image_tag product.image_url, :class => 'main_image' %>
 <% end %>
 <p><span class="column">Stock Quantity: </span><%= product.Stock_quantity %></p>
 <h2>Description</h2>

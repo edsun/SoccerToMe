@@ -7,22 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+  <%= image_tag('Logos/SoccerToMe.png', :height => '150px') %>
+</header>
 <div id="container">
-  <header>
-    <%= image_tag('Logos/SoccerToMe.png', :width => '300px') %>
-  </header>
   <nav>
     <ul>
       <li><%= link_to 'Home', root_path %></li>
       <li><%= link_to 'All Products', products_path %></li>
       <li><%= link_to 'All boots', boots_path %></li>
       <li><%= link_to 'All kits', kits_path %></li>
+    </ul>
+    <div class="search">
       <%= form_tag results_path do %>
         <%= label_tag "Search" %>
         <%= text_field_tag :keyword %>
         <%= submit_tag "Search" %>
       <% end %>
-    </ul>
+    </div>
   </nav>
   <div id="content">
     <%= yield %>
