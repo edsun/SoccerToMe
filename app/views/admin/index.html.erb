@@ -2,14 +2,59 @@
 <div class="admin">
   <p>Please select an action:</p>
   <ul class="selections">
-    <li><%= link_to(image_tag("Admin/Product.jpg", :height => '200px', :width => '150px', :class => 'select'), products_path) %></li>
-    <li><%= link_to(image_tag("Admin/canada.jpg", :height => '200px', :width => '150px', :class => 'select'), provinces_path) %></li>
-    <li><%= link_to(image_tag("Admin/Customer.jpg", :height => '200px', :width => '150px', :class => 'select'), customers_path) %></li>
-    <li><%= link_to(image_tag("Admin/Orders.png", :height => '200px', :width => '150px', :class => 'select'), orders_path) %></li>
-    <li><%= link_to(image_tag("Admin/Reviews.png", :height => '200px', :width => '150px', :class => 'select'), reviews_path) %></li>
-    <li><%= link_to(image_tag("Admin/Manufacturer.png", :height => '200px', :width => '150px', :class => 'select'), manufacturers_path) %></li>
-    <li><%= link_to(image_tag("Admin/Categories.png", :height => '200px', :width => '150px', :class => 'select'), categories_path) %></li>
-    <li><%= link_to(image_tag("Admin/pictures.png", :height => '200px', :width => '150px', :class => 'select'), images_path) %></li>
-    <li><%= link_to(image_tag("Admin/address.png", :height => '200px', :width => '150px', :class => 'select'), addresses_path) %></li>
+    <li>
+      <div class="category">
+        <p>Products</p>
+        <%= link_to(image_tag("Admin/Product.jpg", :height => '185pxx', :width => '140px', :class => 'select'), products_path) %>
+      </div>
+    </li>
+    <li>
+      <div class="category">
+        <p>Provinces</p>
+        <%= link_to(image_tag("Admin/canada.jpg", :height => '185px', :width => '140px', :class => 'select'), provinces_path) %>
+      </div>
+    </li>
+    <li>
+      <div class="category">
+        <p>Customers</p>
+        <%= link_to(image_tag("Admin/Customer.jpg", :height => '185px', :width => '140px', :class => 'select'), customers_path) %>
+      </div>
+    </li>
+    <li>
+      <div class="category">
+        <p>Orders</p>
+        <%= link_to(image_tag("Admin/Orders.png", :height => '185px', :width => '140px', :class => 'select'), orders_path) %>
+      </div>
+    </li>
+    <li>
+      <div class="category">
+        <p>Reviews</p>
+        <%= link_to(image_tag("Admin/Reviews.png", :height => '185px', :width => '140px', :class => 'select'), reviews_path) %>
+      </div>
+    </li>
+    <li>
+      <div class="category">
+        <p>Manufacturers</p>
+        <%= link_to(image_tag("Admin/Manufacturer.png", :height => '185px', :width => '140px', :class => 'select'), manufacturers_path) %>
+      </div>
+    </li>
+    <li>
+      <div class="category">
+        <p>Categories</p>
+        <%= link_to(image_tag("Admin/Categories.png", :height => '185px', :width => '140px', :class => 'select'), categories_path) %>
+      </div>
+    </li>
+    <li>
+      <div class="category">
+        <p>Images</p>
+        <%= link_to(image_tag("Admin/pictures.png", :height => '185px', :width => '140px', :class => 'select'), images_path) %>
+      </div>
+    </li>
+    <li>
+      <div class="category">
+        <p>Categories</p>
+        <%= link_to(image_tag("Admin/address.png", :height => '185px', :width => '140pxx', :class => 'select'), addresses_path) %>
+      </div>
+    </li>
   </ul>
 </div>
