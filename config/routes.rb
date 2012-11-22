@@ -1,4 +1,6 @@
 SoccerToMe::Application.routes.draw do
+  get "admin/index"
+
   resources :provinces
 
   resources :addresses
