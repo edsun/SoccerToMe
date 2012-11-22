@@ -1,4 +1,6 @@
 SoccerToMe::Application.routes.draw do
+  resources :orders
+
   resources :product_orders
 
   #get "store/index"

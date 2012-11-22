@@ -12,6 +12,10 @@
  *= require_tree .
 */
 
+a:hover, a:active{
+    /*border-bottom: 2px black solid;*/
+}
+
 header{
     margin: 0px auto;
     display: block;
