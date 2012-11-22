@@ -22,4 +22,10 @@ class StoreController < ApplicationController
     
     @products = Product.where("Name LIKE ?", "%#{@keyword}%")
   end
+  
+  def boots
+    #@products = Categories.includes(:products)
+    
+    @products = Product.where(:category_id => '1')
+  end
 end
