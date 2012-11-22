@@ -11,13 +11,22 @@
  *= require_self
  *= require_tree .
 */
-header > h1{
-    text-align: center;
+
+header{
     margin: 0px auto;
+    display: block;
+    text-align: center;
 }
 
-img{
+header > h1{
+    text-align: center;
+}
+
+#recent > img,
+.image > img{
     border: 2px solid black;
+    padding: 5px;
+    background-color: white;
 }
 
 #container{
@@ -51,9 +60,21 @@ nav li{
 #content{
 }
 
-#recent, #sale, #brand{
+#brand{
+    width: 70%;
+    margin: 0px auto;
+    text-align: center;
+}
+
+ #sale{
     width: 100%;
     margin: 5px;
+}
+
+#recent{
+    width: 50%;
+    margin: 0px auto;
+    text-align: center;
 }
 
 .info{

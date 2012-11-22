@@ -1,10 +1,32 @@
-<div id="recent">
+<div id="brand">
   <h3>
-  Recent Items
+    Shop by Brand:
   </h3>
-  <% @products.each do |product| %>
-    <%= link_to(image_tag(product.image_url, :height => '250px'), store_path(product.id)) %>
-  <% end %>
+  <div class="flexslider">
+    <ul class="slides">
+      <li>
+        <%= image_tag('nikebanner1.jpg', :alt => 'nike') %>
+        <p class="flex-caption">New Nike Boots!</p>
+      </li>
+      <li>
+        <%= image_tag("adidasbanner1.jpg", :alt => "adidas") %>
+        <p class="flex-caption">Adidas is all in.</p>
+      </li>
+      <li>
+        <%= image_tag("pumabanner1.jpg", :alt => "puma") %>
+        <p class="flex-caption">New Puma 2012 collection</p>
+      </li>
+      <li>
+        <%= image_tag("umbrobanner1.png", :alt => "umbro") %>
+        <p class="flex-caption">Shop Umbro</p>
+      </li>
+    </ul>
+  </div>
+  <script type="text/javascript" charset="utf-8">
+    $(window).load(function() {
+      $('.flexslider').flexslider();
+    });
+  </script> 
 </div>
 
 <div id="sale">
@@ -14,11 +36,15 @@
   <p>On Sale Items go here</p>
 </div>
 
-<div id="brand">
+<div id="recent">
   <h3>
-    Shop by Brand:
+  Recent Items
   </h3>
-  <p>Brand logos go here</p>
+  <% @products.each do |product| %>
+    <%= link_to(image_tag(product.image_url, :height => '100px'), store_path(product.id)) %>
+  <% end %>
 </div>
+
+
 
 
