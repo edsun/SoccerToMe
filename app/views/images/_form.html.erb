@@ -19,6 +19,10 @@
     <%= f.label :alt %><br />
     <%= f.text_field :alt %>
   </div>
+  <div class="field">
+    <%= f.label :product_id %><br />
+    <%= f.collection_select(:product_id, Product.all, :id, :Name) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

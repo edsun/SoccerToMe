@@ -1,6 +1,7 @@
 class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
+  
   def index
     @images = Image.all
 
@@ -25,7 +26,7 @@ class ImagesController < ApplicationController
   # GET /images/new.json
   def new
     @image = Image.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @image }
