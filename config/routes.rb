@@ -22,6 +22,12 @@ SoccerToMe::Application.routes.draw do
   
   match "store/results" => "store#search_results", :as => 'results', :via => :post
   
+  match "store/about" => "store#about", :as => "about", :via => :get
+  
+  match "store/contact" => "store#contact", :as => "contact", :via => :get
+  
+  match "store/all" => "store#all", :as => "all", :via => :get
+  
   match "store/:id" => "store#show", :as => "store", :via => :get
   
   #get "store/show"

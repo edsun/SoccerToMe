@@ -1,6 +1,7 @@
 class StoreController < ApplicationController
   def index
     @products = Product.includes(:reviews).order('created_at DESC').limit(4)
+    @sale = Product.where(:on_sale => true)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,6 +18,11 @@ class StoreController < ApplicationController
   def search
   end
   
+  # All Products
+  def all
+    @products = Product.includes(:reviews).order('created_at DESC')
+  end
+  
   def search_results
     @keyword = params[:keyword]
     
@@ -31,5 +37,12 @@ class StoreController < ApplicationController
   
   def kits
     @products = Product.where(:category_id => '2')
+  end
+  
+  # About view
+  def about
+  end
+  
+  def contact
   end
 end

@@ -67,15 +67,10 @@ nav li{
     width: 1000px;
 }
 
-#brand{
+#brand, #sale{
     width: 60%;
     margin: 0px auto;
     text-align: center;
-}
-
- #sale{
-    width: 100%;
-    margin: 5px;
 }
 
 #recent{
