@@ -1,9 +1,9 @@
 <h1><%= product.Name %></h1>
-<div class="image">
-    <% if product.image_url.present? %>
-        <%= image_tag product.image_url, :width => '400px', :class => 'main_image' %>
-    <% end %>
-</div>
+ <% if product.image_url.present? %>
+            <li>
+                <%= image_tag product.image_url, :width => '400', :class => 'main_image' %>
+            </li>
+ <% end %>
 <div class="info">
     <% if product.sale_price.present? %>
         <h3><span class="column">Price: </span><s>$<%= product.Price %></s></h3>

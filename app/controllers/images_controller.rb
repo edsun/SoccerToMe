@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
   # GET /images.json
   
   def index
-    @images = Image.all
+    @images = Image.includes(:product).all
 
     respond_to do |format|
       format.html # index.html.erb

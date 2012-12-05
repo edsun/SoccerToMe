@@ -12,6 +12,7 @@ class StoreController < ApplicationController
   def show
     @product = Product.includes(:reviews).find(params[:id])
     @review = @product.reviews.build
+    @images = @product.images.build
   end
   
   # There is a associated view for this action

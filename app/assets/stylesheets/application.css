@@ -81,14 +81,15 @@ nav li{
 
 .info{
     float: right;
-    width: 50%;
+    width: 55%;
+    margin: 2px;
 }
 
 .image{
     float: left;
 }
 
-.main_image, .select{
+.main_image, .select, .secondary_image{
     border: 2px solid black;
     padding: 5px;
     background-color: white;

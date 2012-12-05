@@ -1,25 +1,97 @@
-<%= render :partial => 'product', :object => @product, :as => 'product'  %>
-
-<h2>Reviews</h2>
-
-<% if @product.reviews.empty? %>
-    <p>There are no reviews</p>
+<div class="info">
+    <% if @product.sale_price.present? %>
+            <h3><span class="column">Price: </span><s>$<%= @product.Price %></s></h3>
+            <h3><span class="column">Sale Price: </span>$<%= @product.sale_price %></h3>
+    <% else %>
+            <h3><span class="column">Price: </span>$<%= @product.Price %></h3>
+    <% end %>
+    <h2>Description</h2>
+    <p><%= @product.Description %></p>
+</div>
+<div class="show_images">
+<% if @product.images.count <= 0 %>
+    <% if @product.image_url.present? %>
+        <li>
+            <%= image_tag @product.image_url, :class => 'main_image' %>
+        </li>
+    <% end %>
 <% else %>
-    <%=  render @product.reviews %>
+    <div id="slider" class="flexslider">
+        <ul class="slides">
+            <% if @product.image_url.present? %>
+                <li>
+                    <%= image_tag @product.image_url %>
+                </li>
+            <% end %>
+            <% if @product.images.count > 0 %>
+                <% @product.images.each do |image| %>
+                    <li>
+                        <%= image_tag image.Image_url %>
+                    </li>
+                <% end %>
+            <% end %> 
+        </ul>
+    </div>
+    <div id="carousel" class="flexslider">
+        <ul class="slides">
+            <% if @product.image_url.present? %>
+                <li>
+                    <%= image_tag @product.image_url %>
+                </li>
+            <% end %>
+            <% if @product.images.count > 0 %>
+                <% @product.images.each do |image| %>
+                    <li>
+                        <%= image_tag image.Image_url %>
+                    </li>
+                <% end %>
+            <% end %> 
+        </ul>
+    </div>
 <% end %>
-
+</div>
+<script type="text/javascript">
+    $(window).load(function() {
+      // The slider being synced must be initialized first
+      $('#carousel').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        itemWidth: 210,
+        itemMargin: 5,
+        asNavFor: '#slider'
+      });
+       
+      $('#slider').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        sync: "#carousel"
+      });
+    });
+</script>
 <div class="reviews">
+    <h2>Reviews</h2>
+    
+    <% if @product.reviews.empty? %>
+        <p>There are no reviews</p>
+    <% else %>
+        <%=  render @product.reviews %>
+    <% end %>
+
     <%=  form_for @review do |f| %>
         <div>
-          <%=  f.label :Title %>
+          <%=  f.label :Title %><br />
           <%=  f.text_field :Title %>
         </div>
         <div>
-          <%=  f.label :Body %>
+          <%=  f.label :Body %><br />
           <%=  f.text_area :Body %>
         </div>
         <div>
-          <%=  f.label :Rating %>
+          <%=  f.label :Rating %><br />
           <%=  f.text_field :Rating %>
         </div>
         <div>
