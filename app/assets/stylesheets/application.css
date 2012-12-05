@@ -89,7 +89,7 @@ nav li{
     float: left;
 }
 
-.main_image, .select, .secondary_image{
+.main_image, .select, .secondary_image, .sale{
     border: 2px solid black;
     padding: 5px;
     background-color: white;
