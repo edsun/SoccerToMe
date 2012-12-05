@@ -18,6 +18,15 @@ header{
     width: 1000px;
 }
 
+#logo{
+    border: 1px solid black;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 5px 5px #888;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    box-shadow: 5px 5px 5px #888;
+    background-color:  #91b73e;
+}
+
 header > h1{
     text-align: center;
 }
@@ -96,8 +105,8 @@ nav li{
 }
 
 .reviews{
-    margin: 0px auto;
-    text-align: center;
+    margin: 5px;
+    padding: 5px;
 }
 
 .select{
