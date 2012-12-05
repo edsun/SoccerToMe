@@ -44,6 +44,11 @@ class StoreController < ApplicationController
   def about
   end
   
+  # Contact view
   def contact
+  end
+  
+  # searching by brand
+  def brand
   end
 end

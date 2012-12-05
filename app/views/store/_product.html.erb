@@ -1,8 +1,6 @@
 <h1><%= product.Name %></h1>
  <% if product.image_url.present? %>
-            <li>
-                <%= image_tag product.image_url, :width => '400', :class => 'main_image' %>
-            </li>
+    <%= image_tag product.image_url, :width => '400', :class => 'main_image' %>
  <% end %>
 <div class="info">
     <% if product.sale_price.present? %>
@@ -11,12 +9,10 @@
     <% else %>
         <h3><span class="column">Price: </span>$<%= product.Price %></h3>
     <% end %>
-    <h2>Description</h2>
-    <p><%= product.Description %></p>
+    <p>This product has <%= pluralize product.reviews.count, 'review' %>.</p>
     <div class="show">
         <%= link_to 'View Item', store_path(product.id) %>
     </div>
 </div>
 <div class="reviews">
-    <p>This product has <%= pluralize product.reviews.count, 'review' %>.</p>
 </div>

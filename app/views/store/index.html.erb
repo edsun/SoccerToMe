@@ -1,7 +1,4 @@
 <div id="brand">
-  <h3>
-    Shop by Brand:
-  </h3>
   <div class="flexslider">
     <ul class="slides">
       <li>
@@ -42,7 +39,7 @@
 
 <div id="recent">
   <h3>
-  Recently Added Items
+  New Items
   </h3>
   <% @products.each do |product| %>
     <%= link_to(image_tag(product.image_url, :height => '100', :class => 'sale'), store_path(product.id)) %>

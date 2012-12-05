@@ -3,18 +3,22 @@
   <h1><%= product.Name %></h1>
   <div class="image">
     <% if product.image_url.present? %>
-        <%= image_tag product.image_url, :width => '400px', :class => 'main_image' %>
+        <%= image_tag product.image_url, :width => '400', :class => 'main_image' %>
     <% end %>
   </div>
   <div class="info">
-    <h3><span class="column">Price: </span>$<%= product.Price %></h3>
-    <h2>Description</h2>
-    <p><%= product.Description %></p>
+    <% if product.sale_price.present? %>
+        <h3><span class="column">Price: </span><s>$<%= product.Price %></s></h3>
+        <h3><span class="column">Sale Price: </span>$<%= product.sale_price %></h3>
+    <% else %>
+        <h3><span class="column">Price: </span>$<%= product.Price %></h3>
+    <% end %>
+    <p>This product has <%= pluralize product.reviews.count, 'review' %>.</p>
   <div class="show">
     <%= link_to 'View Item', store_path(product.id) %>
   </div>
   </div>
   <div class="reviews">
-    <p>This product has <%= pluralize product.reviews.count, 'review' %>.</p>
+    
   </div>
 <% end %>

@@ -12,7 +12,7 @@
 <% if @product.images.count <= 0 %>
     <% if @product.image_url.present? %>
         <li>
-            <%= image_tag @product.image_url, :class => 'main_image' %>
+            <%= image_tag @product.image_url, :class => 'main_image', :width => '400' %>
         </li>
     <% end %>
 <% else %>

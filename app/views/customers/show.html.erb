@@ -20,6 +20,16 @@
   <%= @customer.address_id %>
 </p>
 
+<% if @customer.addresses.count > 0 %>
+  <% @customer.addresses.each do |address| %>
+      <h3>Main Address:</h3>
+      <p><%= address.street_no %> <%= address.street_name %></p>
+      <p><%= address.city %></p>
+      <p><%= address.postal_code %></p>
+  <% end %>
+<% end %>
+
+
 
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', customers_path %>

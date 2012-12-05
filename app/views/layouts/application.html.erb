@@ -8,7 +8,7 @@
 </head>
 <body>
 <header>
-  <%= image_tag('Logos/SoccerToMe.png', :height => '150px', :id => 'logo') %>
+  <%= image_tag('Logos/SoccerToMe.png', :height => '150', :id => 'logo') %>
 </header>
 <div id="container">
   <nav>
@@ -22,7 +22,7 @@
     </ul>
     <div class="search">
       <%= form_tag results_path do %>
-        <%= label_tag "Search" %>
+        <%= label_tag 'keyword', 'Search' %>
         <%= text_field_tag :keyword %>
         <%= submit_tag "Search" %>
       <% end %>
